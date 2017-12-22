@@ -57,7 +57,7 @@ struct Rect {
 var react = Rect()
 react.myName = "Sarath "
 
-
+/*  closure */
 
 var myClosure = { (name:String,age:Int) ->String  in
     print("My Name is:\(name) and age is:\(age)")
@@ -65,6 +65,7 @@ var myClosure = { (name:String,age:Int) ->String  in
 }
 myClosure("sarath", 25)
 
+/*  singleton */
 
 struct myprofile
 {
@@ -79,6 +80,8 @@ struct myprofile
 }
 myprofile.sharedInstance.doSomething()
 
+/*  gcd */
+
 DispatchQueue.global(qos: .default).async {
     print("GCD global")
     DispatchQueue.main.async {
@@ -90,6 +93,8 @@ DispatchQueue.global(qos: .default).async {
 let addoperation = BlockOperation {
     print("operation queue backgroung")
 }
+
+/* nsoperationqueue */
 
 let queue = OperationQueue()
 queue.addOperation(addoperation)
