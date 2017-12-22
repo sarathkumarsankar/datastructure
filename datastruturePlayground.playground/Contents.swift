@@ -7,9 +7,8 @@ class fruitClass
 {
     init() {
     }
-    func mostCommonElement(fruitsArray:Array<Any>) -> String {
+    func mostCommonElement(fruitsArray:Array<Any>) -> Any {
         let fruitDic = NSMutableDictionary()
-        print(fruitsArray)
         for fruit in fruitsArray {
             if fruitDic[fruit] != nil {
                 fruitDic[fruit] = fruitDic[fruit] as! Int + 1
@@ -19,18 +18,23 @@ class fruitClass
         }
         print(fruitDic)
         var repeatedFruits = fruitsArray[0]
-        let repeatedCount = fruitDic[fruitsArray[0]] as! Int
+        var repeatedCount = fruitDic[fruitsArray[0]] as! Int
         for i in 1..<fruitsArray.count {
             if repeatedCount <  fruitDic[fruitsArray[i]] as! Int{
                 repeatedFruits = fruitsArray[i]
+                repeatedCount = fruitDic[fruitsArray[i]] as! Int
+
             }
         }
-        return repeatedFruits as! String
+        return repeatedFruits
     }
 }
 var fruitInstance = fruitClass()
-var fruitsArray = ["apple","orange","mango","apple2","apple","orange"]
-print("reapetedelement: \(fruitInstance.mostCommonElement(fruitsArray: fruitsArray))")
+var FFF = "sarathkumar"
+
+var fruitsArray = ["s","a","r","a","t","h","k","u","m","a","r"]
+//var fruitsArray = [12,2,3,2,1,6,6,6]
+print("reapetedelement: \(fruitInstance.mostCommonElement(fruitsArray: fruitsArray) )")
 
 
 
