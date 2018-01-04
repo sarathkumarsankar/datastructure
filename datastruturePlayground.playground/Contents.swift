@@ -114,7 +114,7 @@ class fruitClass2
 
 
 
-/*** check number is prime or not ****/
+/*** check number is prime or not  start****/
 
 class SampleClass3
 {
@@ -137,7 +137,10 @@ class SampleClass3
     }
 }
 var istanceSampleClass3 = SampleClass3()
-istanceSampleClass3.checkPrimeNumbers(number: 3)
+istanceSampleClass3.checkPrimeNumbers(number: 67)
+
+/*** check number is prime or not  end ****/
+
 
 
 
