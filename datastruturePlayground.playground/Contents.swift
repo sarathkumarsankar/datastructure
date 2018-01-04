@@ -71,11 +71,76 @@ class fruitClass1
         return mergedArray+leftArray2+rightArray2
     }
 }
-var unsortArray = [12,15,3,2,1,6,8,3]
+var unsortArray = [12,15,3,2,1,6,8,3,50]
  var n = 5
 var myInstance = fruitClass1()
 var sortedArray = myInstance.mergeSort(unsortedArray: unsortArray)
 print("sortedArray:\(sortedArray)")
 print("\(n)th smallest element is \(sortedArray[n-1])")
 
-/******** K’th Smallest/Largest Element in Unsorted Array end*********/
+/********  K’th Smallest/Largest Element in Unsorted Array end  *********/
+/**** remove */
+
+/********  remove dublicate in unsorted array  ********/
+
+
+
+class fruitClass2
+{
+    func removeDublicate(unsortedArray:Array<Int>) -> Array<Any> {
+        var hashArray = [Int](repeatElement(0, count: 8))
+        var myarray = unsortedArray
+        for i in 1..<myarray.count {
+            print("******")
+            var ss = myarray[i]
+            print(hashArray[ss])
+            if hashArray[ss] == 0 {
+                hashArray[ss] = hashArray[ss] + 1
+            }else
+            {
+                myarray.remove(at: i)
+            }
+        }
+        return hashArray
+    }
+    
+  
+}
+//var unsortArray2 = [5,1,2,3,2,5,3]
+//var n2 = 5
+//var myInstance2 = fruitClass2()
+//var result = myInstance2.removeDublicate(unsortedArray: unsortArray2)
+//print("result:\(result)")
+
+
+
+/*** check number is prime or not ****/
+
+class SampleClass3
+{
+//    var myArray : [Int]?
+//    init(array:[Int]) {
+//        self.myArray = array
+//    }
+    var maxLoop:Int?
+    func checkPrimeNumbers(number:Int) {
+        for var i in 2..<number {
+            maxLoop = i
+            if number % i == 0{
+               print("Not Prime")
+                break;
+            }
+        }
+        if maxLoop!+1 == number {
+            print("Prime")
+        }
+    }
+}
+var istanceSampleClass3 = SampleClass3()
+istanceSampleClass3.checkPrimeNumbers(number: 3)
+
+
+
+
+
+
