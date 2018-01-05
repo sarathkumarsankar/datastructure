@@ -10,5 +10,5 @@ Paytm interview questions
 5.does REST support xml?
 6.core location?
 7.difference between MVC and MVVM?
-8.how will you store 50000 user info in document,how you will particular user?
+8.how will you store 50000 user info in document,how you will fetch particular user?
 
