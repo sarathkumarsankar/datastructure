@@ -5,6 +5,12 @@ Paytm interview questions
 
 1.what is difeerence between http ana https?
 2.what is the difference between REST and SOAP?
+SOAP defines standards to be strictly followed.	REST does not define too much standards like SOAP.
+SOAP requires more bandwidth and resource than REST.	REST requires less bandwidth and resource than SOAP.
+SOAP defines its own security.	RESTful web services inherits security measures from the underlying transport.
+SOAP permits XML data format only.	REST permits different data format such as Plain text, HTML, XML, JSON etc.
+SOAP is less preferred than REST.	REST more preferred than SOAP.
+
 3.what is the ssl and tcp?
 4.oops defines?
 5.does REST support xml?
