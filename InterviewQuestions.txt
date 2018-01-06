@@ -18,3 +18,12 @@ SOAP is less preferred than REST.	REST more preferred than SOAP.
 7.difference between MVC and MVVM?
 8.how will you store 50000 user info in document,how you will fetch particular user?
 
+mavenier interview questions
+
+1.delegates and protocols:
+
+A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol
+
+Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.
+
+2.how to throw the exception?
