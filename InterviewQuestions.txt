@@ -29,3 +29,5 @@ A protocol defines a blueprint of methods, properties, and other requirements th
 Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.
 
 2.how to throw the exception?
+3.how do you use objective c framework/library in swift project?
+4.what is the difference between bundleid and appli id?
