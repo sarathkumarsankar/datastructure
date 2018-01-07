@@ -31,3 +31,4 @@ Delegates are a design pattern that allows one object to send messages to anothe
 2.how to throw the exception?
 3.how do you use objective c framework/library in swift project?
 4.what is the difference between bundleid and appli id?
+5.what is difference between swift 2 and swift 3?
