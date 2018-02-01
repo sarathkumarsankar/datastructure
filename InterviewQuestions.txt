@@ -34,11 +34,16 @@ Delegates are a design pattern that allows one object to send messages to anothe
 4.what is the difference between bundleid and appli id?
 5.what is difference between swift 2 and swift 3?
 Tarams
-6.what is the difference between swift 4 and swift 3?
-7.how will you achieve loaderview with animation in ios?
-8.difference between struct and enum?
-9.differnce between struct and class?
-10.how to change label widht according to dynamic text?
+1.what are swift 4 update from swift 3?
+
+2.how will you achieve loaderview with animation in ios?
+3.difference between struct and enum?
+4.differnce between struct and class?
+5.how to change label widht according to dynamic text?
+6. encapsulation?
+7. binary search tree?
+
+mindtree.
 
 
 
