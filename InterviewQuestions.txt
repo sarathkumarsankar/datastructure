@@ -5,6 +5,7 @@ Paytm interview questions
 
 1.what is difeerence between http ana https?
 2.what is the difference between REST and SOAP?
+
 SOAP defines standards to be strictly followed.	REST does not define too much standards like SOAP.
 SOAP requires more bandwidth and resource than REST.	REST requires less bandwidth and resource than SOAP.
 SOAP defines its own security.	RESTful web services inherits security measures from the underlying transport.
@@ -14,7 +15,7 @@ SOAP is less preferred than REST.	REST more preferred than SOAP.
 3.what is the ssl and tcp?
 
 4.oops defines?
-5.does REST support xml?
+5.does REST support xml? Yes
 6.core location ?
 7.difference between MVC and MVVM ?
 8.how will you store 50000 user info in document,how you will fetch particular user ?
@@ -32,3 +33,12 @@ Delegates are a design pattern that allows one object to send messages to anothe
 3.how do you use objective c framework/library in swift project?
 4.what is the difference between bundleid and appli id?
 5.what is difference between swift 2 and swift 3?
+Tarams
+6.what is the difference between swift 4 and swift 3?
+7.how will you achieve loaderview with animation in ios?
+8.difference between struct and enum?
+9.differnce between struct and class?
+10.how to change label widht according to dynamic text?
+
+
+
