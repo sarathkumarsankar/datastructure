@@ -45,5 +45,28 @@ Tarams
 
 mindtree.
 
+1. Escaping and non-escaping closure
+2. Migration
+3.design pattern
+4.why you are looking for job change?
+5.which scenario you used singleton design pattern and observer design patter
+
+Winjit technologies
+1.polymorphism
+2.Data abstraction
+3.lazy
+4.feature of Xcode 9 and iOS 11
+5.tuples
+6.mvp design patgtern
+7.In-app purchase
+8.category in objective c
+
+Robosoft 
+1. How you will dubug error
+2. Difference between mvc and mvvm
+3. Higher order function in swift
+4. layer object of ui
+5. optional binding and optional chaining?
+6. Singleton
 
 
