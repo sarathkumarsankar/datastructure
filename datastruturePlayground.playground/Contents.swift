@@ -1,149 +1,251 @@
-//: Playground - noun: a place where people can play
+//Find the second largest number in the array
+let array = [10,9,8,7,6,5,11]
 
-import UIKit
-
-/********* Find most common element in the array start ************/
-class fruitClass
-{
-    init() {
-    }
-    func mostCommonElement(fruitsArray:Array<Any>) -> Any {
-        let fruitDic = NSMutableDictionary()
-        for fruit in fruitsArray {
-            if fruitDic[fruit] != nil {
-                fruitDic[fruit] = fruitDic[fruit] as! Int + 1
-                continue
-            }
-            fruitDic[fruit] = 1
+func findSelecondLargestNumber(array: [Int]) -> Int {
+    var firstLargest = Int.min
+    var secondLargest = Int.min
+    for number in array {
+        if number > firstLargest {
+            secondLargest = firstLargest
+            firstLargest = number
+        } else if number > secondLargest  && secondLargest != firstLargest {
+            secondLargest = number
         }
-        print(fruitDic)
-        var repeatedFruits = fruitsArray[0]
-        var repeatedCount = fruitDic[fruitsArray[0]] as! Int
-        for i in 1..<fruitsArray.count {
-            if repeatedCount <  fruitDic[fruitsArray[i]] as! Int{
-                repeatedFruits = fruitsArray[i]
-                repeatedCount = fruitDic[fruitsArray[i]] as! Int
-
-            }
-        }
-        return repeatedFruits
     }
+    return secondLargest
 }
-var fruitInstance = fruitClass()
-var FFF = "sarathkumar"
 
-var fruitsArray = ["s","a","r","a","t","h","k","u","m","a","r"]
-//var fruitsArray = [12,2,3,2,1,6,6,6]
-print("reapetedelement: \(fruitInstance.mostCommonElement(fruitsArray: fruitsArray) )")
+print(findSelecondLargestNumber(array: array))
 
-/********* Find most common element in the array end************/
+//Write down a string reversal program.For instance, If the given string is “tfiws,” the output should be “swift”.
 
-/******** K’th Smallest/Largest Element in Unsorted Array start*********/
-
-class fruitClass1
-{
-    func mergeSort(unsortedArray:Array<Int>) -> Array<Any> {
-        guard unsortedArray.count > 1 else {
-            return unsortedArray
-        }
-        let midpoint = unsortedArray.count / 2
-        let leftArray = unsortedArray[0..<midpoint]
-        let rightArray = unsortedArray[midpoint..<unsortedArray.count]
-        print(leftArray)
-        print(rightArray)
-        return merge( leftArray1: mergeSort(unsortedArray:Array(leftArray)) as! Array<Int>, rightArray1: mergeSort(unsortedArray:Array(rightArray)) as! Array<Int>)
+func reverseSring(stringInput: String) -> String {
+    var startIndex = 0
+    var endIndex = stringInput.count - 1
+    var stringArray = Array(stringInput)
+    while startIndex < endIndex {
+        let temp = stringArray[endIndex]
+        stringArray[endIndex] = stringArray[startIndex]
+        stringArray[startIndex] = temp
+        startIndex += 1
+        endIndex -= 1
     }
-    
-    func merge(leftArray1:Array<Int>,rightArray1:Array<Int>) -> Array<Any> {
-        var leftArray2 = leftArray1
-        var rightArray2 = rightArray1
-        var mergedArray = [Int]()
-        
-        while leftArray2.count > 0 && rightArray2.count > 0 {
-            if leftArray2[0] > rightArray2[0] {
-                mergedArray.append(rightArray2[0])
-                rightArray2.remove(at: 0)
+  return String(stringArray)
+}
+print(reverseSring(stringInput: "abcd"))
+// tfiws s fiw t  s wif t
+//
+
+// 3 sum problem:
+//Input: nums = [-1,0,1,2,-1,-4]
+
+func threeSum(_ nums: [Int]) -> [[Int]] {
+    var triplets = Set<[Int]>()
+    let sortedArray = nums.sorted()
+    print(sortedArray)
+    for i in 0..<sortedArray.count - 2 {
+        let first = sortedArray[i]
+        var left = i + 1
+        var right = sortedArray.count - 1
+        while left < right {
+            let sum = sortedArray[left] + sortedArray[right] + first
+            if sum < 0 {
+                left += 1
+            } else if sum > 0 {
+                right -= 1
             } else {
-                mergedArray.append(leftArray2[0])
-                leftArray2.remove(at: 0)
+                triplets.insert([first, sortedArray[left], sortedArray[right]])
+                left += 1
+                right -= 1
             }
         }
-        return mergedArray+leftArray2+rightArray2
     }
+    return Array(triplets)
 }
-var unsortArray = [12,15,3,2,1,6,8,3,50]
- var n = 5
-var myInstance = fruitClass1()
-var sortedArray = myInstance.mergeSort(unsortedArray: unsortArray)
-print("sortedArray:\(sortedArray)")
-print("\(n)th smallest element is \(sortedArray[n-1])")
 
-/********  K’th Smallest/Largest Element in Unsorted Array end  *********/
-/**** remove */
-
-/********  remove dublicate in unsorted array  ********/
+print(threeSum([-1, -1, 0, 1, 2]))
 
 
+func threeSumClosest(_ nums: [Int], target: Int) -> Int {
+    var triplets = Set<[Int]>()
+    let sortedArray = nums.sorted()
+    var minDifference = Int.max
+    var resultSum = Int.min
 
-class fruitClass2
-{
-    func removeDublicate(unsortedArray:Array<Int>) -> Array<Any> {
-        var hashArray = [Int](repeatElement(0, count: 8))
-        var myarray = unsortedArray
-        for i in 1..<myarray.count {
-            print("******")
-            var ss = myarray[i]
-            print(hashArray[ss])
-            if hashArray[ss] == 0 {
-                hashArray[ss] = hashArray[ss] + 1
-            }else
-            {
-                myarray.remove(at: i)
+    print(sortedArray)
+    for i in 0..<sortedArray.count - 2 {
+        let first = sortedArray[i]
+        var left = i + 1
+        var right = sortedArray.count - 1
+        while left < right {
+            let sum = sortedArray[left] + sortedArray[right] + first
+            if sum < target {
+                left += 1
+            } else if sum > target {
+                right -= 1
+            } else if sum == target {
+                return target
+            }
+            print("sum:\(sum)")
+                            
+            let diiferent = abs(target - sum)
+            if diiferent < minDifference {
+                resultSum = sum
+                minDifference = diiferent
             }
         }
-        return hashArray
     }
+    return resultSum
+}
+
+print(threeSumClosest([1,1,1,0], target: -100))
+
+func maxSubArray(_ nums: [Int]) -> Int {
     
-  
-}
-//var unsortArray2 = [5,1,2,3,2,5,3]
-//var n2 = 5
-//var myInstance2 = fruitClass2()
-//var result = myInstance2.removeDublicate(unsortedArray: unsortArray2)
-//print("result:\(result)")
-
-
-
-/*** check number is prime or not  start****/
-
-class SampleClass3
-{
-//    var myArray : [Int]?
-//    init(array:[Int]) {
-//        self.myArray = array
-//    }
-    var maxLoop:Int?
-    func checkPrimeNumbers(number:Int) {
-        for var i in 2..<number {
-            maxLoop = i
-            if number % i == 0{
-               print("Not Prime")
-                break;
+var maxSum = nums[0]
+    var sum = 0
+    for i in 0..<nums.count {
+        sum = 0
+        for j in i..<nums.count {
+            sum += nums[j]
+            if sum > maxSum {
+                maxSum = sum
             }
         }
-        if maxLoop!+1 == number {
-            print("Prime")
+    }
+   return maxSum
+}
+
+print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+
+
+func maxSubArrayKadaneAlgorithm(_ nums: [Int]) -> Int {
+    
+var maxSum = nums[0]
+var sum = nums[0]
+    for i in 1..<nums.count {
+        if sum >= 0 {
+            sum += nums[i]
+        } else {
+            sum = nums[i]
+        }
+        if maxSum < sum {
+            maxSum = sum
         }
     }
+   return maxSum
 }
-var istanceSampleClass3 = SampleClass3()
-istanceSampleClass3.checkPrimeNumbers(number: 67)
 
-/*** check number is prime or not  end ****/
+print(maxSubArrayKadaneAlgorithm([-2,1,-3,4,-1,2,1,-5,4]))
+
+func sortinAlgorithm(input: inout [Int]) {
+    for j in 0..<input.count {
+        for i in 0..<input.count-1-j {
+            if input[i] > input[i + 1] {
+                input.swapAt(i, i + 1)
+            }
+        }
+    }
+    print("sorted:\(input)")
+}
+
+var unsortedArray = [-2,1,-3,4,-1,2,1,-5,4]
+sortinAlgorithm(input: &unsortedArray)
+
+func findUnionOfTwoSortedArray(array1: [Int], array2: [Int]) {
+    let array1Count = array1.count
+    let array2Count = array2.count
+    var i = 0
+    var j = 0
+    var unionArray = [Int]()
+    while i < array1Count && j < array2Count {
+        if array1[i] < array2[j] {
+            if unionArray.last != array1[i] {
+                unionArray.append(array1[i])
+            }
+            i += 1
+        } else if array1[i] > array2[j] {
+            if unionArray.last != array2[j] {
+                
+                unionArray.append(array2[j])
+            }
+            j += 1
+        } else {
+            if unionArray.last != array1[i] {
+                unionArray.append(array1[i])
+            }
+            i += 1
+            j += 1
+        }
+    }
+    while i < array1Count {
+        if unionArray.last != array1[i] {
+            
+            unionArray.append(array1[i])
+        }
+        i += 1
+    }
+    while j < array2Count {
+        if unionArray.last != array2[j] {
+            unionArray.append(array2[j])
+        }
+        j += 1
+    }
+print(unionArray)
+}
+
+findUnionOfTwoSortedArray(array1: [1,2,4,5,6], array2: [2,3,5,7])
+
+//Remove Element
+
+//Input: nums = [3,2,2,3], val = 3
+func removeElement(input: inout [Int], remove: Int) {
+    var i = 0
+    
+    for j in 0..<input.count {
+        if input[j] != remove {
+            input[i] = input[j]
+            i += 1
+        }
+    }
+  
+    while i<input.count {
+        input[i] = 0
+        i += 1
+    }
+    print(input)
+}
+var inputrray = [0,1,2,2,3,0,4,2]
+removeElement(input: &inputrray, remove: 2)
 
 
 
+    func rotate(_ nums: inout [Int], _ k: Int) {
+        
+        let n = nums.count
 
+        // Modulo ensures the range within the length and avoids unnecessary rotation.
+        let k = k % n
+        reverse(&nums, 0, n-1)
+        reverse(&nums, 0, k-1)
+        reverse(&nums, k, n-1)
+    }
 
+    func reverse(_ nums: inout [Int], _ start: Int, _ end: Int) {
 
+        var start = start
+        var end = end
 
+        while start < end{
+
+            let temp = nums[start]
+            nums[start] = nums[end]
+            nums[end] = temp
+
+            start += 1
+            end -= 1
+        }
+    }
+var sssd = [1,2,3,4]
+rotate(&sssd, 2)
+print(sssd)
